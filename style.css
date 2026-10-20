@@ -1,0 +1,383 @@
+:root {
+  --gold: #c49a32;
+  --gold-dark: #765710;
+  --black: #171717;
+  --white: #ffffff;
+  --light-gray: #f6f4ef;
+  --text-gray: #555555;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--black);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--gold-dark);
+}
+
+a:hover {
+  color: var(--black);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: -9999px;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  background: var(--white);
+  color: var(--black);
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+/* Header and navigation */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1rem 7%;
+  background: var(--black);
+  color: var(--white);
+  border-bottom: 4px solid var(--gold);
+}
+
+.brand {
+  flex-shrink: 0;
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.brand small {
+  color: var(--gold);
+  font-size: 0.9rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--gold);
+}
+
+/* Language button in the header */
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0.55rem 0.8rem;
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  background: var(--gold);
+  color: var(--black);
+  font: inherit;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.language-toggle:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+/* Main sections */
+main section {
+  padding: 4rem 8%;
+  scroll-margin-top: 1rem;
+}
+
+main section:nth-child(even) {
+  background: var(--light-gray);
+}
+
+h1,
+h2 {
+  line-height: 1.25;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h2 {
+  margin-top: 0;
+  color: var(--gold-dark);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+/* Shop name and shop photo */
+#home {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: var(--black);
+  color: var(--white);
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-text h1 {
+  color: var(--white);
+}
+
+.hero-subtitle {
+  color: var(--gold);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.shop-photo {
+  display: block;
+  width: 100%;
+  max-height: 560px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 3px solid var(--gold);
+  border-radius: 10px;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.3rem;
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  background: var(--gold);
+  color: var(--black);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact-button:hover,
+.contact-button:focus-visible {
+  background: transparent;
+  color: var(--gold);
+}
+
+/* Services */
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-list li {
+  padding: 1rem;
+  border-left: 4px solid var(--gold);
+  border-radius: 4px;
+  background: var(--white);
+  box-shadow: 0 3px 12px rgb(0 0 0 / 8%);
+}
+
+/* Address and phone numbers */
+address {
+  margin: 1.5rem 0;
+  color: var(--text-gray);
+  font-style: normal;
+  line-height: 1.9;
+}
+
+address strong {
+  color: var(--black);
+}
+
+.phone-list a {
+  font-weight: 700;
+}
+
+/* Highlighted urgent contact message */
+.urgent-note {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-left: 5px solid var(--gold);
+  border-radius: 4px;
+  background: #fff4d6;
+  color: var(--black);
+  font-weight: 700;
+}
+
+/* Visiting card */
+.card-figure {
+  max-width: 700px;
+  margin: 2rem 0 0;
+}
+
+.visiting-card {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--gold);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
+}
+
+.card-figure figcaption {
+  margin-top: 0.5rem;
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+
+/* Workshop photos in one horizontal row */
+.workshop-gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 0.25rem 0.1rem 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.workshop-gallery figure {
+  flex: 0 0 200px;
+  margin: 0;
+  padding: 0.4rem;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  background: var(--white);
+  scroll-snap-align: start;
+}
+
+.workshop-gallery img {
+  display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.workshop-gallery figcaption {
+  padding-top: 0.3rem;
+  color: var(--black);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  padding: 1.2rem;
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Layout for phones and small screens */
+@media (max-width: 650px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 5%;
+  }
+
+  nav ul {
+    gap: 0.5rem 0.9rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  main section {
+    padding: 2.5rem 5%;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .shop-photo {
+    max-height: 420px;
+  }
+
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+
+  .language-toggle {
+    align-self: flex-start;
+  }
+
+  .workshop-gallery figure {
+    flex-basis: 78%;
+    max-width: 260px;
+  }
+
+  .workshop-gallery img {
+    height: 150px;
+  }
+
+  .urgent-note {
+    padding: 0.85rem;
+  }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
